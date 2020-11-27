@@ -1,0 +1,67 @@
+# ---
+# - name: Installs wordpress
+#   hosts: wordpress
+#   become: yes
+#   become_method: sudo 
+#   tasks: 
+#     - name: Install Webserver and dependencies 
+#       package: 
+#         name: "{{ item }}"
+#       with_items: 
+#         - httpd
+#         - elinks 
+#         - php
+#         - php-gd 
+#         - mysql 
+#         - mariadb-server
+#         - php-mysql 
+#       ignore_errors: yes 
+
+
+#     - name: Get Wordpress
+#       get_url: 
+#         url: https://wordpress.org/latest.tar.gz 
+#         dest: /tmp 
+
+
+
+#     - name: Unzip wordpress
+#       unarchive: 
+#         src: /tmp/wordpress-5.1.tar.gz 
+#         dest: /var/www/html
+#         remote_src: yes 
+
+
+
+#     - name: Move content
+#       shell: "mv /var/www/html/wordpress/*  /var/www/html" 
+#       ignore_errors: yes 
+
+
+
+#     - name: Start webserver 
+#       systemd: 
+#         name: httpd 
+#         state: restarted 
+#         enabled: yes 
+#       ignore_errors: yes 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

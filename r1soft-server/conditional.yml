@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks: 
+    - name: Centos
+      when: ansible_distribution == "CentOS" 
+      command: "/usr/sbin/shutdown -r now"
+

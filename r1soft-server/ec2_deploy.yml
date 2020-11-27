@@ -1,0 +1,13 @@
+---
+- name: Creates ec2 instances
+  hosts: localhost 
+  tasks: 
+    - name: Create R1soft Server
+      ec2:
+        key_name: "ansible" 
+        assign_public_ip: yes 
+        instance_type: "t2.micro"  
+        region: "eu-west-1" 
+        image: "ami-02a39bdb8e8ee056a"                                          #ubuntu image  "ami-02a39bdb8e8ee056a"
+        vpc_subnet_id: "subnet-20b5a569"
+        count: 1 
