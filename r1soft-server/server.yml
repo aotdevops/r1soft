@@ -1,0 +1,27 @@
+---
+- name: Installs r1soft server
+  become: yes 
+  become_method: sudo 
+  user: centos
+  hosts: server
+  tasks: 
+    - name: Create repo 
+      copy: 
+        src: r1soft.repo
+        dest: /etc/yum.repos.d 
+      ignore_errors: true
+    - name:  Install r1soft server
+      package:
+        name: r1soft-cdp-enterprise-server
+        state: present
+    - name: create user and password
+      command: "r1soft-setup --user admin  --pass redhat --http-port 8080"
+      ignore_errors: true
+      
+    - name: Start server
+      command: "/etc/init.d/cdp-server start"
+      
+   
+
+    
+ 
