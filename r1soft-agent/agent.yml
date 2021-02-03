@@ -22,7 +22,7 @@
       state: restarted
       enabled: yes
   - name: Get key 
-    command: "r1soft-setup --get-key  http://54.87.171.203:8080"
+    command: "r1soft-setup --get-key  http://54.242.195.243:8080"
     ignore_errors: true
   - name: stop iptables
     service:
